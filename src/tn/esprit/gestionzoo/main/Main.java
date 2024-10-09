@@ -1,3 +1,8 @@
+package tn.esprit.gestionzoo.main;
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Zoo;
+
+
 public class Main {
     public static void main(String[] args) {
 
@@ -25,14 +30,14 @@ public class Main {
 
         int index = myZoo.searchAnimal("safwen");
         if (index != -1) {
-            System.out.println("Animal trouvé à l'index: " + index);
+            System.out.println("tn.esprit.gestionzoo.entities.Animal trouvé à l'index: " + index);
         }
         myZoo.removeAnimal(tiger);
 
 
         Zoo biggerZoo = Zoo.comparerZoo(myZoo, myZoo2);
         if (biggerZoo != null) {
-            System.out.println("Le zoo avec le plus d'animaux est: " + biggerZoo.name);
+            System.out.println("Le zoo avec le plus d'animaux est: " + biggerZoo.getName());
         }
         System.out.println(myZoo);
     }

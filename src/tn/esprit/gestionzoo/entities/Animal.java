@@ -1,9 +1,9 @@
 package tn.esprit.gestionzoo.entities;
 
 public class Animal {
-   private String family;
+    private String family;
     private String name;
-   private int age;
+    private int age;
     private boolean isMammal;
 
 
@@ -13,6 +13,8 @@ public class Animal {
         this.age = age;
         this.isMammal = isMammal;
     }
+
+    public Animal(){}
     public void displayAnimal() {
         System.out.println("Famille: " + family + ", Nom: " + name + ", Âge: " + age + ", est un mammifère: " + isMammal);
     }

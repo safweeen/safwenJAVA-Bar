@@ -31,4 +31,12 @@ public Aquatic() {
                 this.getAge() == other.getAge() &&
                 this.habitat.equals(other.habitat);
     }
+    @Override
+    public void eatMeat(Food meat) {
+        if (meat == Food.MEAT) {
+            System.out.println(getName() + " mange de la viande.");
+        } else {
+            System.out.println(getName() + " ne mange pas cet aliment.");
+        }
+    }
 }

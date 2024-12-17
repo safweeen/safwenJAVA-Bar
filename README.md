@@ -94,4 +94,4 @@ Ce projet est open source et peut être librement modifié et redistribué.
 
 ---
 
-J'espère que ce fichier README correspond à vos attentes. Si vous avez besoin de modifications ou d'ajouts, faites-le moi savoir !
+

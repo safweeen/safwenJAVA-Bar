@@ -17,6 +17,10 @@ public class Penguin extends Aquatic {
     public String toString() {
         return super.toString() + ", Profondeur de nage: " + swimmingDepth + " mètres";
     }
+    @Override
+    public void swim(){
 
+        System.out.println("This pinguin is swimming");
+    }
 
 }

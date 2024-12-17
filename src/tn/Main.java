@@ -3,31 +3,41 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+        // Création de l'objet EtudiantManagement
+        EtudiantManagement gestionEtudiants = new EtudiantManagement() {
+        };
 
+        // Création de la liste des étudiants
+        List<Etudiant> Etudiants = new ArrayList<>();
+        Etudiants.add(new Etudiant(1, "sighassen", 20));
+        Etudiants.add(new Etudiant(2, "chakchouk", 22));
+        Etudiants.add(new Etudiant(3, "chahouna", 21));
 
-        SocieteArrayList societe = new SocieteArrayList();
+        // Afficher tous les étudiants
+        System.out.println("Liste des étudiants :");
+        gestionEtudiants.displayEtudiants(Etudiants, System.out::println);
 
-        Employe emp1 = new Employe(1, "Benaich", "Yassine", "Informatique", 3);
-        Employe emp2 = new Employe(2, "Haboubi", "Safwen", "Ressources Humaines", 2);
-        Employe emp3 = new Employe(3, "Farhani", "Rayen", "Informatique", 1);
-        Employe emp4 = new Employe(2, "Robbena", "Amen", "Ressources Humaines", 4);
+        // Filtrer et afficher les étudiants de plus de 20 ans
+        System.out.println("\nÉtudiants âgés de plus de 20 ans :");
+        gestionEtudiants.displayEtudiantsByFilter(Etudiants, s -> s.getAge() > 20, System.out::println);
 
+        // Obtenir une liste de noms des étudiants
+        String noms = gestionEtudiants.returnEtudiantsNames(Etudiants, Etudiant::getNom);
+        System.out.println("\nNoms des étudiants : " + noms);
 
-        societe.ajouterEmploye(emp1);
-        societe.ajouterEmploye(emp2);
-        societe.ajouterEmploye(emp3);
-        societe.ajouterEmploye(emp4);
+        // Créer un nouvel étudiant
+        Etudiant newEtudiant = gestionEtudiants.createEtudiant(() -> new Etudiant(4, "ENA", 23));
+        Etudiants.add(newEtudiant);
+        System.out.println("\nListe des étudiants après ajout :");
+        gestionEtudiants.displayEtudiants(Etudiants, System.out::println);
 
+        // Trier les étudiants par ID
+        System.out.println("\nÉtudiants triés par ID :");
+        List<Etudiant> sortedEtudiants = gestionEtudiants.sortEtudiantsById(Etudiants, Comparator.comparingInt(Etudiant::getId));
+        sortedEtudiants.forEach(System.out::println);
 
-        System.out.println("Liste des employés :");
-        societe.displayEmploye();
-
-        System.out.println("\nTrier par ID :");
-        societe.trierEmployeParId();
-        societe.displayEmploye();
-
-        System.out.println("\nTrier par Département et Grade :");
-        societe.trierEmployeParNomDépartementEtGrade();
-        societe.displayEmploye();
+        // Convertir la liste en stream et afficher
+        System.out.println("\nÉtudiants via stream :");
+        gestionEtudiants.convertToStream(Etudiants).forEach(System.out::println);
     }
 }

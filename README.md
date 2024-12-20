@@ -1,6 +1,3 @@
-Voici un autre exemple de README pour les Prosits 9 à 12 de votre projet Java de gestion des employés, tout en conservant la même structure :
-
----
 
 # Gestion d'Employés : Prosits 9 à 12
 
